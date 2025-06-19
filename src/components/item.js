@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 function Item({id,  title, image, latestChapter, category}) {
+  const navigate = useNavigate()
+
   return (
-    <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden flex flex-col">
+    <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden flex flex-col" 
+    onClick={() => navigate(`/details/${id}`)}>
       {/* Ảnh bìa */}
       <div className="aspect-[3/4] bg-white overflow-hidden">
         <img
